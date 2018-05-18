@@ -29,6 +29,13 @@ public class HeapSort {
     }
 
 
+    /**
+     * 建立堆结构
+     *
+     * @param arr
+     * @param n
+     * @return
+     */
     private static int[] buildHeap(int[] arr, int n) {
         int length = arr.length - n;
         for (int i = (length / 2) - 1; i >= 0; i--) {
@@ -36,16 +43,21 @@ public class HeapSort {
             int rightIndex = i * 2 + 2;
             //存在右边节点
             if (rightIndex < length) {
-                //左节点大于父节点则交换
-                if (arr[leftIndex] > arr[i]) {
-                    int temp = arr[leftIndex];
-                    arr[leftIndex] = arr[i];
-                    arr[i] = temp;
+                //左右子节点中最大的和父节点交换
+                if (arr[leftIndex] > arr[rightIndex]) {
+                    if (arr[i] < arr[leftIndex]) {
+                        int temp = arr[leftIndex];
+                        arr[leftIndex] = arr[i];
+                        arr[i] = temp;
+                    }
                 }
                 if (arr[rightIndex] > arr[i]) {
-                    int temp = arr[rightIndex];
-                    arr[rightIndex] = arr[i];
-                    arr[i] = temp;
+                    if (arr[i] < arr[rightIndex]) {
+                        int temp = arr[rightIndex];
+                        arr[rightIndex] = arr[i];
+                        arr[i] = temp;
+                    }
+
                 }
             }
 
