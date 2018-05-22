@@ -1,7 +1,7 @@
 void swap(int *a, int *b) {
-    int temp = *a
-    *a = *b
-    *b = temp
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 void quick_sort(int arr[], int start, int end) {
