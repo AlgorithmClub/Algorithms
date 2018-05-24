@@ -1,6 +1,9 @@
 // QuickSort
 // Author: Doliant
 
+// QuickSort
+// Author: Doliant
+
 func quicksort<T: Comparable> (_ a: [T]) -> [T] {
     guard a.count > 1 else { return a }
     
@@ -14,3 +17,4 @@ func quicksort<T: Comparable> (_ a: [T]) -> [T] {
     resultArray.append(contentsOf: quicksort(rightArray))
     return resultArray
 }
+
