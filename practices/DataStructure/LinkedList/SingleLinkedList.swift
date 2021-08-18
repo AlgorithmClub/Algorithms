@@ -102,3 +102,17 @@ func revertSingleLinkedList(headNode: Node<T>) -> Node<T> {
     }
     return prevNode
 }
+
+// find linkedList circle
+func hasCircle(head: Node<T>) -> Bool {
+    var slow = head
+    var fast = head.next
+    while fast != nil {
+        if slow === fast {
+            return true
+        }
+        slow = slow!.next
+        fast = fast!.next.next
+    }
+    return false
+}
