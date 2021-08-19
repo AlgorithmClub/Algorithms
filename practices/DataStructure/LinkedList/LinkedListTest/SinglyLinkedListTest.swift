@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class LinkedListTest: XCTestCase {
+final class SinglyLinkedListTest: XCTestCase {
     private var sut = SinglyLinkedList<Int>()
     private let firstNode = SinglyNode(1)
     private let beforeNode = SinglyNode(0)

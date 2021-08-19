@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B39105CA26CE9ACB0096236B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39105C926CE9ACB0096236B /* main.swift */; };
-		B39105D926CE9B420096236B /* LinkedListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39105D826CE9B420096236B /* LinkedListTest.swift */; };
+		B39105D926CE9B420096236B /* SinglyLinkedListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39105D826CE9B420096236B /* SinglyLinkedListTest.swift */; };
 		B39105DE26CE9B6D0096236B /* SinglyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39105DD26CE9B6D0096236B /* SinglyLinkedList.swift */; };
 		B39105EA26CEA2900096236B /* SinglyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39105DD26CE9B6D0096236B /* SinglyLinkedList.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +38,7 @@
 		B39105C626CE9ACB0096236B /* LinkedList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedList; sourceTree = BUILT_PRODUCTS_DIR; };
 		B39105C926CE9ACB0096236B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B39105D626CE9B420096236B /* LinkedListTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkedListTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B39105D826CE9B420096236B /* LinkedListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTest.swift; sourceTree = "<group>"; };
+		B39105D826CE9B420096236B /* SinglyLinkedListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedListTest.swift; sourceTree = "<group>"; };
 		B39105DD26CE9B6D0096236B /* SinglyLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglyLinkedList.swift; sourceTree = "<group>"; };
 		B39105E326CEA2760096236B /* NewCMD */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NewCMD; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,7 +99,7 @@
 		B39105D726CE9B420096236B /* LinkedListTest */ = {
 			isa = PBXGroup;
 			children = (
-				B39105D826CE9B420096236B /* LinkedListTest.swift */,
+				B39105D826CE9B420096236B /* SinglyLinkedListTest.swift */,
 			);
 			path = LinkedListTest;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39105EA26CEA2900096236B /* SinglyLinkedList.swift in Sources */,
-				B39105D926CE9B420096236B /* LinkedListTest.swift in Sources */,
+				B39105D926CE9B420096236B /* SinglyLinkedListTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
