@@ -23,7 +23,6 @@ class SinglyNode<T: Equatable>: Equatable {
 }
 
 
-
 class SinglyLinkedList<T: Equatable> {
     typealias Node = SinglyNode<T>
     

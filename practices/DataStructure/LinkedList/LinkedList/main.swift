@@ -2,7 +2,7 @@
 //  main.swift
 //  LinkedList
 //
-//  Created by Doliant on 2021/8/19.
+//  Created by Rui Huang on 2021/8/20.
 //
 
 import Foundation

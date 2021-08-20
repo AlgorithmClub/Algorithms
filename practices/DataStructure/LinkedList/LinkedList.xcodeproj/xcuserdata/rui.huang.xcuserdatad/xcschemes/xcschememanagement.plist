@@ -7,14 +7,14 @@
 		<key>LinkedList.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>LinkedListTest.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>NewCMD.xcscheme_^#shared#^_</key>
+		<key>LinkedListTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>SinglyLinkedList.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
