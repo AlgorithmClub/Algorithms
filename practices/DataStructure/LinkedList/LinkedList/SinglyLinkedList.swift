@@ -7,11 +7,7 @@
 
 import Foundation
 
-class SinglyNode<T: Equatable>: Equatable {
-    static func == (lhs: SinglyNode<T>, rhs: SinglyNode<T>) -> Bool {
-        return lhs.next === rhs.next && lhs.value == rhs.value
-    }
-    
+class SinglyNode<T: Equatable> {
     var next: SinglyNode<T>?
     var value: T?
     
@@ -19,6 +15,12 @@ class SinglyNode<T: Equatable>: Equatable {
     
     init(_ value: T) {
         self.value = value
+    }
+}
+
+extension SinglyNode: Equatable {
+    static func == (lhs: SinglyNode<T>, rhs: SinglyNode<T>) -> Bool {
+        return lhs.next === rhs.next && lhs.value == rhs.value
     }
 }
 
