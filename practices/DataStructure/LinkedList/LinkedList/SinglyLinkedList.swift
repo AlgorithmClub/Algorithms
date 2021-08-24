@@ -115,4 +115,33 @@ class SinglyLinkedList<T: Equatable> {
         }
         return false
     }
+    
+    func reverseNodeList(headNode: Node) -> Node? {
+        var reverseHead: Node?, currentNode: Node?, prevNode: Node?
+        currentNode = headNode
+        while currentNode != nil {
+            let nextNode = currentNode!.next
+            if currentNode?.next == nil {
+                reverseHead = currentNode
+            }
+            currentNode!.next = prevNode
+            prevNode = currentNode
+            currentNode = nextNode
+        }
+        return reverseHead
+    }
+    
+    func hasCircle(headNode: Node) -> Bool {
+        var fastNode: Node?, slowNode: Node?
+        slowNode = headNode
+        fastNode = headNode.next
+        while fastNode != nil {
+            if slowNode == fastNode {
+                return true
+            }
+            slowNode = slowNode!.next
+            fastNode = fastNode!.next?.next
+        }
+        return false
+    }
 }
