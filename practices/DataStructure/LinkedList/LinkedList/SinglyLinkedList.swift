@@ -20,7 +20,7 @@ class SinglyNode<T: Equatable> {
 
 extension SinglyNode: Equatable {
     static func == (lhs: SinglyNode<T>, rhs: SinglyNode<T>) -> Bool {
-        return lhs.next === rhs.next && lhs.value == rhs.value
+        return lhs.next == rhs.next && lhs.value == rhs.value
     }
 }
 
@@ -116,6 +116,29 @@ class SinglyLinkedList<T: Equatable> {
         return false
     }
     
+    // assume index start from 1
+    func delete(index: Int) -> Bool {
+        var num = 1
+        var lastNode = dummyNode, currentNode = dummyNode.next
+        while currentNode != nil {
+            if num == index {
+                lastNode.next = currentNode!.next
+                return true
+            }
+            lastNode = currentNode!
+            currentNode = currentNode!.next
+            num += 1
+        }
+        return false
+    }
+    
+    // delete revert index node
+    func deleteFromBottom(reverseIndex: Int) -> Bool {
+        let targetIndex = size - reverseIndex + 1
+        return delete(index: targetIndex)
+    }
+    
+    
     func reverseNodeList(headNode: Node) -> Node? {
         var reverseHead: Node?, currentNode: Node?, prevNode: Node?
         currentNode = headNode
@@ -144,4 +167,45 @@ class SinglyLinkedList<T: Equatable> {
         }
         return false
     }
+}
+
+func mergeSortList<Element: Comparable>(headA: SinglyNode<Element>?, headB: SinglyNode<Element>?) -> SinglyNode<Element>? {
+    guard let headA = headA else {
+        return headB
+    }
+    
+    guard let headB = headB else {
+        return headA
+    }
+    
+    var head: SinglyNode<Element>?, tail: SinglyNode<Element>?
+    
+    var nodeA: SinglyNode<Element>? = headA, nodeB: SinglyNode<Element>? = headB
+    
+    if nodeA!.value! < nodeB!.value! {
+        head = nodeA
+        nodeA = nodeA!.next
+    } else {
+        head = nodeB
+        nodeB = nodeB!.next
+    }
+    tail = head
+    
+    while nodeA != nil, nodeB != nil {
+        if nodeA!.value! < nodeB!.value! {
+            tail?.next = nodeA
+            nodeA = nodeA!.next
+        } else {
+            tail?.next = nodeB
+            nodeB = nodeB!.next
+        }
+        tail = tail!.next
+    }
+    
+    if nodeA != nil {
+        tail?.next = nodeA
+    } else {
+        tail?.next = nodeB
+    }
+    return head
 }

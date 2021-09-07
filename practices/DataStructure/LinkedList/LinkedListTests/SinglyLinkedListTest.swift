@@ -7,6 +7,34 @@
 
 import XCTest
 
+final class MergeLinkedListTest: XCTestCase {
+    private var firstLinkedList = SinglyLinkedList<Int>()
+    private var secondLinkedList = SinglyLinkedList<Int>()
+    
+    private let firstNode = SinglyNode(1)
+    private let secondNode = SinglyNode(2)
+    private let thirdNode = SinglyNode(3)
+    private let fouthNode = SinglyNode(4)
+    private let fifthNode = SinglyNode(5)
+    
+    override func setUp() {
+        firstLinkedList.insertToHead(thirdNode)
+        _ = firstLinkedList.insert(after: thirdNode, with: fouthNode)
+        _ = firstLinkedList.insert(after: fouthNode, with: fifthNode)
+        
+        secondLinkedList.insertToHead(firstNode)
+        _ = secondLinkedList.insert(after: firstNode, with: secondNode)
+    }
+    
+    func test_GIVEN_twoSortedLinkedList_WHEN_callMergeLinkedList_THEN_returnTheRightHead() {
+        let mergedListNode = mergeSortList(headA: firstLinkedList.node(atIndex: 1), headB: secondLinkedList.node(atIndex: 1))
+        XCTAssertEqual(mergedListNode!, firstNode)
+        XCTAssertEqual(mergedListNode!.next?.next?.next, fouthNode)
+    }
+    
+    
+}
+
 final class SinglyLinkedListTest: XCTestCase {
     private var sut = SinglyLinkedList<Int>()
     private let firstNode = SinglyNode(1)
@@ -73,6 +101,24 @@ final class SinglyLinkedListTest: XCTestCase {
         beforeNode.next = firstNode
         let hasCircle = sut.hasCircle(headNode: firstNode)
         XCTAssertTrue(hasCircle)
+    }
+    
+    func test_GIVEN_linkedListWithNode_WHEN_deleteWithIndex_THEN_returnRightResult() {
+        sut.insertToHead(firstNode)
+        _ = sut.insert(after: firstNode, with: afterNode)
+        _ = sut.insert(after: afterNode, with: beforeNode)
+        let result = sut.delete(index: 2)
+        XCTAssertTrue(result)
+        XCTAssertEqual(sut.node(atIndex: 2), beforeNode)
+    }
+    
+    func test_GIVEN_linkedListWithNode_WHEN_deleteWithReverseIndex_THEN_returnRightResult() {
+        sut.insertToHead(firstNode)
+        _ = sut.insert(after: firstNode, with: afterNode)
+        _ = sut.insert(after: afterNode, with: beforeNode)
+        let result = sut.deleteFromBottom(reverseIndex: 3)
+        XCTAssertTrue(result)
+        XCTAssertEqual(sut.node(atIndex: 1), afterNode)
     }
 
 }
