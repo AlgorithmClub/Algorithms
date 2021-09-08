@@ -120,5 +120,13 @@ final class SinglyLinkedListTest: XCTestCase {
         XCTAssertTrue(result)
         XCTAssertEqual(sut.node(atIndex: 1), afterNode)
     }
+    
+    func test_GIVEN_linkedListWithNodes_WHEN_getTheHalfNode_THEN_returnTheRightNode() {
+        sut.insertToHead(firstNode)
+        _ = sut.insert(after: firstNode, with: afterNode)
+        _ = sut.insert(after: afterNode, with: beforeNode)
+        let result = sut.halfNode(in: firstNode)
+        XCTAssertEqual(result, afterNode)
+    }
 
 }

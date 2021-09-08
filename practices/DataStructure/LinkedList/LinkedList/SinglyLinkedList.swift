@@ -154,6 +154,15 @@ class SinglyLinkedList<T: Equatable> {
         return reverseHead
     }
     
+    func halfNode(in head: Node) -> Node? {
+        var slowNode: Node? = head, fastNode: Node? = head
+        while fastNode?.next != nil, fastNode?.next?.next != nil {
+            fastNode = fastNode?.next?.next
+            slowNode = slowNode?.next
+        }
+        return slowNode
+    }
+    
     func hasCircle(headNode: Node) -> Bool {
         var fastNode: Node?, slowNode: Node?
         slowNode = headNode
