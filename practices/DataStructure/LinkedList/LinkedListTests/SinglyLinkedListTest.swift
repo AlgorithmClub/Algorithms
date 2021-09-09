@@ -128,5 +128,18 @@ final class SinglyLinkedListTest: XCTestCase {
         let result = sut.halfNode(in: firstNode)
         XCTAssertEqual(result, afterNode)
     }
+    
+    func test_GIVEN_linkedListWithOneNode_WHEN_deleteTheLastOne_THEN_returnNil() {
+        sut.insertToHead(firstNode)
+        let result = sut.deleteNthFromEnd(head: firstNode, n: 1)
+        XCTAssertNil(result)
+    }
+    
+    func test_GIVEN_linkedListWithTwoNodes_WHEN_deleteTheSecondOne_THEN_returnRightNode() {
+        sut.insertToHead(firstNode)
+        _ = sut.insert(after: firstNode, with: afterNode)
+        let result1 = sut.deleteNthFromEnd(head: firstNode, n: 2)
+        XCTAssertEqual(result1, afterNode)
+    }
 
 }

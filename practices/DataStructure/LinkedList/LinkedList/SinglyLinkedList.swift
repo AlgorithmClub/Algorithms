@@ -138,6 +138,26 @@ class SinglyLinkedList<T: Equatable> {
         return delete(index: targetIndex)
     }
     
+    func deleteNthFromEnd(head: Node?, n: Int) -> Node? {
+        var slow = head, fast = head, num = 0
+        while fast != nil, num < n {
+            fast = fast!.next
+        }
+        
+        var prev: Node?
+        while fast != nil {
+            prev = slow
+            slow = slow!.next
+            fast = fast!.next
+        }
+        
+        guard prev != nil else {
+            slow = head?.next
+            return slow
+        }
+        return head
+    }
+    
     
     func reverseNodeList(headNode: Node) -> Node? {
         var reverseHead: Node?, currentNode: Node?, prevNode: Node?
