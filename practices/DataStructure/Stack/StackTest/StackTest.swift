@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import Stack
 
 class StackTest: XCTestCase {
     
